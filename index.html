@@ -24,22 +24,24 @@
     </div>
   </div>
 </body>
- <script src="//cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
-<script type="text/javascript">
-	const  searchModule = {
-		apiKey : '21449712-f0a8724d8eb961a56340b43d2',
-		apiUrl : 'https://www.pixabay.com/api/?image_type=photo&orientation=horizontal&per_page=50',
-		searchKey :'',
-		images : [],
-		getImages(){
-			const requestUrl = `${this.apiUrl}&q=${this.searchKey}&key=${this.apiKey}`
-			fetch(requestUrl)
-			.then(res=>res.json())
-			.then(data=>{
-               this.images = data.hits
-			})
-		}
-	}
+<script src="//cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.2/dist/alpine.min.js" defer></script>
+
+<script>
+  const searchModule = {
+    apiKey: '1984111-80063ba8cb2e514a8b70d062c',
+    apiUrl: 'https://pixabay.com/api/?image_type=photo&orientation=horizontal&per_page=50',
+    searchkey: '',
+    images: [],
+    getImages() {
+      this.images = [];
+      const requestUrl = `${this.apiUrl}&q=${this.searchkey}&key=${this.apiKey}`
+      fetch(requestUrl)
+        .then(res => res.json())
+        .then(data => {
+          this.images = data.hits
+        })
+    }
+  }
 </script>
 </html>
  
