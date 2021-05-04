@@ -79,11 +79,11 @@
         <li><a target="_blank" class="git" href="https://github.com/developer019"><i class="fab fa-github-square"></i></a></li>
       </ul>
       <h1 class="text-center mb-4 poppins text-secondary">IMAGE SEARCH</h1>
-      <div class="input-group gapfix roboto">
+      <div class="input-group roboto">
         <input @keydown.enter="getImages()" type="text" class="form-control" placeholder="Search Image" x-model="searchKey">
         <button @click="getImages()" class="btn btn-info text-white">Search</button>
       </div>
-      <small class="text-secondary roboto">Powered By Pixabay</small>
+      <small class="text-secondary roboto gapfix">Powered By Pixabay</small>
     </div>
     <div class="search-result">
       <template x-for="image in images">
