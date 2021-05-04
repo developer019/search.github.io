@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <title>Alpine JS || Pixabay Api || Image Search || Hasin Hayder</title>
+   <title>Image search with alpine js & paixabay api, Credit : Hasin Hayder Vai</title>
    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
    <link rel="stylesheet" href="style.css">
   </head>
@@ -12,18 +12,19 @@
  
 <div class="container">
   <div class="row" x-data="searchModule" x-init="">
-    <div class="col-md-6 offset-md-3 my-4">
-      <h4 class="text-center">Image Search</h4>
-      <div class="input-group">
+    <div class="col-md-4 offset-md-4 my-4">
+      <h1 class="text-center my-4 poppins text-secondary">IMAGE SEARCH</h1>
+      <div class="input-group mb-1 roboto">
         <input @keydown.enter="getImages()" type="text" class="form-control" placeholder="Search Image" x-model="searchKey">
-        <button @click="getImages()" class="btn btn-primary">Search</button>
+        <button @click="getImages()" class="btn btn-info text-white">Search</button>
       </div>
+      <small class="text-secondary roboto">Powered By Pixabay Api</small>
     </div>
     <div class="search-result">
       <template x-for="image in images">
-          <a :href="image.pageURL" target="_blank" :title="image.tags" width="100%">
-            <img :src="image.webformatURL" :title="image.tags" loading=lazy>
-          </a>
+        <a :href="image.pageURL" target="_blank" :title="image.tags" width="100%">
+          <img :src="image.webformatURL" :title="image.tags" loading=lazy>
+        </a>
       </template>
     </div>
   </div>
