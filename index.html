@@ -63,6 +63,9 @@
       .twitter{
         color:#1DA1F2;
       }
+     .gapfix{
+      margin-bottom:50px;
+     }
    </style>
   </head>
  <body>
@@ -76,7 +79,7 @@
         <li><a target="_blank" class="git" href="https://github.com/developer019"><i class="fab fa-github-square"></i></a></li>
       </ul>
       <h1 class="text-center mb-4 poppins text-secondary">IMAGE SEARCH</h1>
-      <div class="input-group mb-1 roboto">
+      <div class="input-group gapfix roboto">
         <input @keydown.enter="getImages()" type="text" class="form-control" placeholder="Search Image" x-model="searchKey">
         <button @click="getImages()" class="btn btn-info text-white">Search</button>
       </div>
@@ -84,7 +87,7 @@
     </div>
     <div class="search-result">
       <template x-for="image in images">
-        <a :href="image.pageURL" target="_blank" :title="image.tags" width="100%">
+          <a :href="image.pageURL" target="_blank" :title="image.tags" width="100%">
           <img :src="image.webformatURL" :title="image.tags" loading=lazy>
         </a>
       </template>
@@ -95,7 +98,7 @@
  <script type="text/javascript">
    const searchModule = {
      apiKey : '21449712-f0a8724d8eb961a56340b43d2',
-     apiUrl : 'https://pixabay.com/api/?image_type=photo&orientation=horizontal&per_page=50',
+     apiUrl : 'https://pixabay.com/api/?image_type=photo&orientation=horizontal&per_page=51',
      searchKey : '',
      images  : [],
      getImages(){
