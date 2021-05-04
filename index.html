@@ -64,7 +64,7 @@
         color:#1DA1F2;
       }
      .gapfix{
-      margin-bottom:50px;
+      margin-top:50px;
      }
    </style>
   </head>
@@ -83,9 +83,9 @@
         <input @keydown.enter="getImages()" type="text" class="form-control" placeholder="Search Image" x-model="searchKey">
         <button @click="getImages()" class="btn btn-info text-white">Search</button>
       </div>
-      <small class="text-secondary roboto gapfix">Powered By Pixabay</small>
+      <small class="text-secondary roboto">Powered By Pixabay</small>
     </div>
-    <div class="search-result">
+    <div class="search-result gapfix">
       <template x-for="image in images">
           <a :href="image.pageURL" target="_blank" :title="image.tags" width="100%">
           <img :src="image.webformatURL" :title="image.tags" loading=lazy>
